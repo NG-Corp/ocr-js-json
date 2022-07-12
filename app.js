@@ -8,7 +8,7 @@ const path = require('path');
 const txtToJson = require('txt-to-json')
 
 
-const scheduler = createScheduler();
+
 const worker = createWorker();
 const worker2 = createWorker();
 
