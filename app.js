@@ -7,7 +7,7 @@ const xlsx = require('xlsx');
 const path = require('path');
 const txtToJson = require('txt-to-json')
 
-const api = (data) => {
+
 const scheduler = createScheduler();
 const worker = createWorker();
 const worker2 = createWorker();
@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
-
+const api = (data1) => {
 app.post("/upload", (req, res) => {
     upload(req, res, err => {
         fs.readFile(`./uploads/${req.file.originalname}`, (err, data) => {
@@ -46,10 +46,10 @@ app.post("/upload", (req, res) => {
                         await worker.load();
                         await worker.loadLanguage('eng');
                         await worker.initialize('eng');
-                        const { data: { text } } = await worker.recognize(data);
+                        const { data: { text } } = await worker.recognize(data1);
                         console.log(text);
-                        await fs.writeFile(`${data}.txt`, text, (err) => {}); // 4
-                        await txtToJson(`./${data}.txt`)
+                        await fs.writeFile(`${data1}.txt`, text, (err) => {}); // 4
+                        await txtToJson(`./${data1}.txt`)
                         await worker.terminate();   
  
                       })();
