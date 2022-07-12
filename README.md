@@ -22,3 +22,5 @@ It will console.log the text.
 
 
 Thanks for using my package! 
+
+PS: You Can see my package on https://www.npmjs.com/package/ocr-js-json
