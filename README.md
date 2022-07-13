@@ -13,9 +13,12 @@ Docs
 Use the package by doing this:
 
 var tesseract = require('tesseract.js');
+
 var ocr-js-json = require('ocr-js-json');
 
-api(data)
+var shl = data;
+
+api(shl)
 
 
 It will console.log the text.
